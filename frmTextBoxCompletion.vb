@@ -1,4 +1,4 @@
-﻿Public Class frmAsistNuevProm
+﻿Public Class frmTextBoxCompletion
     '************************************************************************************
     'Importante: Se requiere que el formulario donde se ubica este código, contenga un
     'TextBox y un ListBox con los nombres "TextBox1" y "ListBox1".

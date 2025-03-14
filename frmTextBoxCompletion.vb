@@ -72,8 +72,7 @@
     End Sub
     Private Sub InicAutocompletado()
         ' Crear una lista de sugerencias
-        sugerencias.AddRange(New String() {"Por la compra de ",
-            "Uva", "Aguacate", "Manzana", "Maracuya", "Banana", "Cereza", "Dátil", "Fresa", "Granada"})
+        sugerencias.AddRange(New String() {"Uva", "Aguacate", "Manzana", "Maracuya", "Banana", "Cereza", "Dátil", "Fresa", "Granada"})
         ListBox1.Visible = False
         ListBox1.SelectionMode = SelectionMode.One
     End Sub

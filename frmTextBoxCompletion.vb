@@ -106,6 +106,15 @@
         procesarAutocompletado()
     End Sub
     Private Sub txtDescripcion_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
+        If e.KeyCode = Keys.Enter And ListBox1.Visible And ListBox1.SelectedIndex >= 0 Then
+            'Hay sugerencia seleccionada y se pide elegir una
+            Dim selIndex As Integer = ListBox1.SelectedIndex
+            Dim sug_seleccionada As String = ListBox1.SelectedItem.ToString()
+            ReemplazarPalabraBajoCursor(sug_seleccionada)
+            e.SuppressKeyPress = True
+            Exit Sub
+        End If
+        'Procesa la tecla
         procesarAutocompletado()
         If e.KeyCode = Keys.Escape Then
             ListBox1.Visible = False
@@ -121,13 +130,6 @@
 
             End If
         ElseIf e.KeyCode = Keys.Tab Then
-        ElseIf e.KeyCode = Keys.Enter Then
-            If ListBox1.Visible And ListBox1.SelectedIndex >= 0 Then
-                'Hay elemento seleccionado
-                Dim sug_seleccionada As String = ListBox1.SelectedItem.ToString()
-                ReemplazarPalabraBajoCursor(sug_seleccionada)
-                e.SuppressKeyPress = True
-            End If
         End If
     End Sub
     Private Sub txtDescripcion_Leave(sender As Object, e As EventArgs) Handles TextBox1.Leave
